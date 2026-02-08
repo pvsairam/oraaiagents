@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Fusion AI Agent Studio Prep Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'oracle-red': '#C74634',
+                    }
+                }
+            }
+        }
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const initialQuestions = [
+  {
+    "id": 2,
+    "question": "As an implementer of AI agents, you are responsible for evaluating their performance with latency and token metrics. Why is it important to consider these alongside correctness?",
+    "options": [
+      "While latency and tokens reveal efficiency, correctness only validates semantic memory.",
+      "While latency and tokens control 'Complete' status, correctness validates factual alignment.",
+      "Correctness checks only logical consistency.",
+      "While latency and tokens reveal efficiency/cost, correctness validates the factual accuracy of the answer."
+    ],
+    "correctAnswer": 3,
+    "source": "Oracle AI Agent Studio - Monitoring and Analytics"
+  },
+  {
+    "id": 3,
+    "question": "In Oracle AI Agent Studio, what is the significance of offline testing compared to online A/B testing?",
+    "options": [
+      "Offline testing requires manual verification, while A/B testing uses automated metrics.",
+      "Offline testing ensures evaluation against reference answers before launch, while A/B testing checks live sentiment.",
+      "Offline testing validates latency before production, while A/B testing validates semantic correctness.",
+      "Offline testing focuses on optimizing agent performance, while A/B testing validates configuration effectiveness."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle AI Agent Studio - Evaluation & Testing"
+  },
+  {
+    "id": 4,
+    "question": "Fusion Applications accessing sensitive employee data requires safeguarding personal information. How does the solution address these security requirements?",
+    "options": [
+      "By using keys to secure and stateless providers for encryption.",
+      "By granting open access to all tools and APIs within the agent to streamline integration.",
+      "By relying on prompt-based instructions to disable data aggregation.",
+      "By applying role-based access controls, enforcing API authentication, and enabling Oracle's guardrails."
+    ],
+    "correctAnswer": 3,
+    "source": "Oracle Fusion Security Reference & AI Agent Studio Guide"
+  },
+  {
+    "id": 5,
+    "question": "A Leave & Absence agent frequently receives vague queries like 'Leave'. As a prompt designer, what should you do?",
+    "options": [
+      "Keep the system prompt minimal and allow the AI to infer intent.",
+      "Require users to ask questions as full sentences.",
+      "Define clear rules in the system prompt for ambiguous queries and instruct the agent to ask for clarification.",
+      "Hardcode a response that always assumes 'Annual Leave'."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle AI Agent Studio - Prompt Engineering Best Practices"
+  },
+  {
+    "id": 6,
+    "question": "A financial services company wants an agent to provide tailored guidance for regulatory, tax, and audit queries. How should this be configured?",
+    "options": [
+      "Create separate Topics for regulatory, tax, and audit queries.",
+      "A single Topic for regulatory, tax, and audit queries.",
+      "Configure a Business Object Tool for regulatory, tax, and audit queries.",
+      "Use a single general prompt for all financial queries."
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle AI Agent Studio - Managing Topics"
+  },
+  {
+    "id": 7,
+    "question": "Which Enterprise Service (ESS) process must be executed when a Document Type Tool is created before the agent can use the documents?",
+    "options": [
+      "Process Agent Document",
+      "Data Summaries Using Generative AI",
+      "Mass Ingest Journeys Data",
+      "HCM Access Control List Initial Ingestion"
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle AI Agent Studio - Document Tools"
+  },
+  {
+    "id": 8,
+    "question": "A business needs to restrict access to a specific AI Agent. As the Agent Team administrator, which configuration applies?",
+    "options": [
+      "Assign the Agent Team to a custom role with the Access Intelligent Agent Chat privilege.",
+      "Assign the Agent Team to a public group.",
+      "Assign the Agent Team to a duty role without specific privileges.",
+      "Configure the agent to be open but use a password."
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle Fusion Security Guide - AI Agents"
+  },
+  {
+    "id": 9,
+    "question": "When configuring the execution of workforce subtasks, what is the impact of parallel execution?",
+    "options": [
+      "It increases the risk of errors without affecting completion time.",
+      "It allows subtasks to run concurrently, reducing the overall completion time.",
+      "It causes subtasks to run sequentially, increasing completion time.",
+      "It disables the ability to use tools."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle AI Agent Studio - Orchestration"
+  },
+  {
+    "id": 10,
+    "question": "Which privilege must be assigned to enable an employee to access and test an AI Agent in Oracle Fusion Applications?",
+    "options": [
+      "FND_GENAI_MANAGER",
+      "FND_GENAI_MANAGER_DUTY",
+      "ACCESS_INTELLIGENT_AGENT",
+      "FND_GENAI_AGENT_RUNTIME_DUTY (FAI_GENAI_AGENT_RUNTIME_DUTY)"
+    ],
+    "correctAnswer": 3,
+    "source": "Oracle Fusion Security Reference (25D/26A)"
+  },
+  {
+    "id": 11,
+    "question": "You need to ensure agent answers match the official return policy and errors are identified before deployment. How do you confirm correctness?",
+    "options": [
+      "Have each customer service representative approve the responses individually.",
+      "Refer against the documentation provided by the agent development team.",
+      "Test the agent with real-world questions and verify answers against the official policy.",
+      "Rely solely on the confidence score provided by the LLM."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle AI Agent Studio - Testing Strategy"
+  },
+  {
+    "id": 12,
+    "question": "An agent frequently provides incomplete answers regarding job application status. How can you refine the system prompt?",
+    "options": [
+      "Make the system prompt longer by adding more information regardless of structure.",
+      "Use a complex SQL structure for the system reasoning.",
+      "Break the system prompt into concise, step-by-step instructions that clearly outline expected actions.",
+      "Remove all instructions and let the model guess."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle AI Agent Studio - Prompt Engineering"
+  },
+  {
+    "id": 15,
+    "question": "The system prompt for a Benefits Agent says 'Display benefit enrollment data' and employees find answers confusing. How should you refine it?",
+    "options": [
+      "Rephrase the prompt to 'Show my current health plan and who is covered'.",
+      "Shorten the prompt to make it more concise.",
+      "Keep the existing prompt but provide examples of enrollment data.",
+      "Add more policy-related terminology to match the Benefits policy manual."
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle AI Agent Studio - User Experience Design"
+  },
+  {
+    "id": 16,
+    "question": "An outbound compliance agent query must be grounded solely in internal policy and minimize tool calls. What modification should you make?",
+    "options": [
+      "Keep existing tools active and expand the policy coverage.",
+      "Replace the document-based policy reference with a Business Object configuration.",
+      "Disable the Deep Link capability so users remain within Fusion.",
+      "Direct the agent to use the Document Tool for compliance and keep the Deep Link."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle AI Agent Studio - Tool Usage"
+  },
+  {
+    "id": 17,
+    "question": "How should you configure the AI agent to display only selected columns in the REST API response for specific opportunity questions?",
+    "options": [
+      "Select a business object that only retrieves the required fields.",
+      "Update the business object function to include all fields and then filter.",
+      "Select the specific fields required in the 'Parameters and Business Object Fields' section.",
+      "Use a Document tool to parse the columns."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle AI Agent Studio - Business Object Tool Configuration"
+  },
+  {
+    "id": 18,
+    "question": "Which duty role should be assigned to allow a user to interact with AI Agents in the application?",
+    "options": [
+      "FND GenAI Manager Duty",
+      "FND GenAI Manager Job",
+      "FAI GenAI Agent Runtime Duty (FAI_GENAI_AGENT_RUNTIME_DUTY)",
+      "FAI GenAI Agent HCM Administrator Duty"
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle Fusion Security Reference"
+  },
+  {
+    "id": 19,
+    "question": "You are designing an agent to help employees view pay slips and calculate pay with strict access controls. Which configuration meets these requirements?",
+    "options": [
+      "Configure a Document Tool with pay policy PDFs and assign a Topic.",
+      "Use an External REST Tool to connect to an external payroll provider.",
+      "Use a Business Object Tool for pay data, a Deep Link Tool for payslip details, and a Calculator Tool.",
+      "Set up a Calculator Tool for pay calculations and a Documents Tool for policy."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle AI Agent Studio - Tool Usage"
+  },
+  {
+    "id": 20,
+    "question": "After a quarterly update, users report an agent is no longer able to retrieve invoices. What is the likely cause?",
+    "options": [
+      "The quarterly update deprecated the REST API, requiring a switch to SOAP.",
+      "The agent's prompt and topics were overwritten.",
+      "The quarterly update changed the API version path (e.g. from 11.13.18.05 to 11.13.18.06).",
+      "The agent was deleted."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle Fusion REST API Update Policy"
+  },
+  {
+    "id": 21,
+    "question": "A company wants to assign specific roles for configuration vs deployment. Which roles ensure appropriate access control?",
+    "options": [
+      "Assign the Application Implementation Consultant role to administrators.",
+      "Assign App Implementation Consultant to admins, and create a custom role with 'Access Intelligent Agent Chat' for end users.",
+      "Assign product family-specific admin roles with permission groups enabled.",
+      "Grant full admin access to all users."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle AI Agent Studio - Security Setup"
+  },
+  {
+    "id": 22,
+    "question": "Which security mechanism and data encryption standard is recommended when integrating the AI agent with an external REST service?",
+    "options": [
+      "OpenID Connect and data encryption using RSA.",
+      "OAuth 2.0 and data encryption using PGP.",
+      "Basic authentication and SSL/TLS encryption.",
+      "OAuth 2.0 and data encryption using AES-256."
+    ],
+    "correctAnswer": 3,
+    "source": "Oracle Cloud Infrastructure Security Guide"
+  },
+  {
+    "id": 23,
+    "question": "An Oracle AI agent accesses an external provider via REST API to query payroll data. How can you ensure security compliance?",
+    "options": [
+      "Allow all authenticated users to access payroll data.",
+      "Require multi-factor authentication for agent access.",
+      "Configure the REST tool to restrict agent access to users with the designated HR role.",
+      "Enable detailed audit logging for payroll data access only."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle AI Agent Studio - External REST Security"
+  },
+  {
+    "id": 25,
+    "question": "A Consultant needs to enable a custom role to chat with an agent. Which step in the Security Console is essential?",
+    "options": [
+      "Enable permission groups for the custom role and assign duty roles.",
+      "Assign a custom role to the user and manually adjust data security.",
+      "Add the 'Access Intelligent Agent Chat' privilege to the user's role.",
+      "Enable the API access key."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle Fusion Security Console"
+  },
+  {
+    "id": 26,
+    "question": "When adding a new business object function using 'Add from Specification' to retrieve opportunity details by number, what is the correct setup?",
+    "options": [
+      "Get all opportunities.",
+      "Create opportunity with a parameter for opportunity number.",
+      "Update opportunity with a parameter.",
+      "Get all opportunities with a filter on opportunity number."
+    ],
+    "correctAnswer": 3,
+    "source": "Oracle Visual Builder/Business Object API"
+  },
+  {
+    "id": 27,
+    "question": "Which operation is used in the Business Object tool to retrieve team details?",
+    "options": [
+      "Uses the 'Get Manager' function.",
+      "Uses a pre-built function called 'match' for querying team members.",
+      "It only returns workers who report directly to the logged-in user.",
+      "It provides a list of all employees in the entire organization."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle HCM Cloud Documentation"
+  },
+  {
+    "id": 28,
+    "question": "Why would you integrate Oracle Fusion AI Agent with external services via REST API?",
+    "options": [
+      "To restrict integration to internal data only.",
+      "To extend agents with external platforms such as Slack or Microsoft Teams.",
+      "To replace the internal database.",
+      "To avoid using Business Objects."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle AI Agent Studio - Integrations"
+  },
+  {
+    "id": 29,
+    "question": "The agent must retrieve inventory data from Fusion Inventory for authorized locations and allow for future integration with logistics partners. How?",
+    "options": [
+      "Upload Inventory spreadsheets regularly using a Document Tool.",
+      "Assign a Deep Link Tool to the inventory dashboard.",
+      "Combine a Document Tool for inventory records with a Deep Link Tool.",
+      "Add a Business Object Tool for inventory with role-based access and configure an External REST call."
+    ],
+    "correctAnswer": 3,
+    "source": "Oracle AI Agent Studio - Tooling"
+  },
+  {
+    "id": 30,
+    "question": "Which operation types are supported when creating a business object in Oracle Fusion's Agent Studio?",
+    "options": [
+      "POST, GET, PATCH, DELETE (CRUD).",
+      "JOIN, MERGE, SPLIT",
+      "SELECT, INSERT, UPDATE",
+      "CREATE, READ, UPDATE, DELETE (CRUD) only"
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle AI Agent Studio - Business Object Operations"
+  },
+  {
+    "id": 31,
+    "question": "What should you include when defining an External REST API Tool to ensure the agent successfully communicates with the service?",
+    "options": [
+      "The API response schema, supported error codes, and any required mapping.",
+      "The endpoint URL, HTTP operation, and authentication details for the external API.",
+      "A set of predefined questions and answers.",
+      "A link to an external resource with information on the external API."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle AI Agent Studio - REST Tool Definition"
+  },
+  {
+    "id": 32,
+    "question": "A HR agent handling different HR processes follows the same escalation logic. How should the escalation logic be attached?",
+    "options": [
+      "Create a shared Topic for escalation logic and a separate Topic for response style.",
+      "Upload escalation and response style documents to the Document Tool.",
+      "Assign a Business Object Tool to query escalation logic.",
+      "Hardcode it in every agent."
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle AI Agent Studio - Topic Management"
+  },
+  {
+    "id": 33,
+    "question": "When configuring and activating tasks in a Guided Journey, which statement describes the activation and preview steps?",
+    "options": [
+      "Preview the journey and assign security roles for activation.",
+      "Preview is required, activation is optional.",
+      "Activation and preview are both required steps.",
+      "Only activation is required; preview is recommended."
+    ],
+    "correctAnswer": 3,
+    "source": "Oracle HCM Guided Journeys Guide"
+  },
+  {
+    "id": 34,
+    "question": "You are deploying an AI agent within Oracle Fusion Applications using a Guided Journey. Which actions are required?",
+    "options": [
+      "Create a Guided Journey and add a Task type of 'agent'.",
+      "Update the agent's access in Security Console and map permissions.",
+      "Enter the Guided Journey code into the homepage page properties.",
+      "Both Create the Guided Journey Task AND Enter the Code in Page Properties."
+    ],
+    "correctAnswer": 3,
+    "source": "Oracle HCM Experience Design Studio"
+  },
+  {
+    "id": 35,
+    "question": "After completing the Agent Team setup in AI Agent Studio, what steps are required to visualize the agent on the homepage?",
+    "options": [
+      "In Visual Builder Studio, enter the Guided Journey code in the dedicated field for homepage properties.",
+      "In AI Agent Studio, assign a Business Object Tool to the agent.",
+      "In the Application menu, duplicate the Agent Team.",
+      "In Guided Journeys, create a new journey."
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle AI Agent Studio - Deployment"
+  },
+  {
+    "id": 36,
+    "question": "An administrator needs to update an existing policy with a new version. What is the recommended process?",
+    "options": [
+      "Delete existing tools from the Agent Team and create a new Document Tool.",
+      "Add the policy documents as file attachments in the workflow settings.",
+      "Link new policy documents in a Topic and attach to the Agent Team.",
+      "Upload new documents directly to the Document Tool and run the Process Agent Documents ESS process."
+    ],
+    "correctAnswer": 3,
+    "source": "Oracle AI Agent Studio - Knowledge Management"
+  },
+  {
+    "id": 37,
+    "question": "An implementation team needs to grant an administrator full configuration access for both HCM and SCM families. What is the setup?",
+    "options": [
+      "Enable permission groups, assign Supply Chain Admin for SCM, and create custom HCM admin role with permission groups.",
+      "Assign HCM and SCM Application Administrator roles without permission groups.",
+      "Assign only the Application Implementation Consultant role.",
+      "Assign only FAI GenAI Agent Runtime Duty."
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle Identity Manager / Security Console"
+  },
+  {
+    "id": 38,
+    "question": "A Finance AI Agent is experiencing inconsistent prompt performance. What approach should be used to structure the system prompt?",
+    "options": [
+      "List all prompt details in order of perceived user importance.",
+      "Integrate persona, instructions, inputs, and outcomes into a single narrative paragraph.",
+      "Break the prompt into clearly defined sections by type such as persona, instructions, inputs, and desired output.",
+      "Remove the persona section."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle AI Agent Studio - Prompt Engineering"
+  },
+  {
+    "id": 39,
+    "question": "Which metric is analyzed in Oracle AI Studio Automated Testing to determine if agent responses match expectations?",
+    "options": [
+      "Sentiment verification scores measured during live A/B testing.",
+      "Correctness of the generated response compared to expected answers.",
+      "Token efficiency relative to test set averages.",
+      "Latency of response generation from input to output."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle AI Agent Studio - Automated Testing"
+  },
+  {
+    "id": 40,
+    "question": "Users report the embedded agent is not visible on the responsive homepage. What is a likely reason?",
+    "options": [
+      "The Agent Team has not been published within AI Agent Studio.",
+      "The homepage layout was customized after the Guided Journey was embedded.",
+      "The Guided Journey is in the draft status.",
+      "The Guided Journey code was entered in a property field not associated with the homepage experience."
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle AI Agent Studio - Deployment Lifecycle"
+  },
+  {
+    "id": 41,
+    "question": "When testing a Guided Journey, why is Preview mode recommended?",
+    "options": [
+      "Preview mode ensures homepage custom themes are not overwritten.",
+      "Preview mode validates that the Guided Journey agent appears and functions correctly in the UI context.",
+      "Preview mode automatically corrects misconfigured agent roles.",
+      "Preview mode is required to generate the Guided Journey's activation code."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle Visual Builder Studio"
+  },
+  {
+    "id": 42,
+    "question": "Which action should you perform in Visual Builder Studio to confirm that the Guided Journey agent appears correctly?",
+    "options": [
+      "Add the Guided Journey agent code to homepage properties and use the preview function.",
+      "Enter the Guided Journey code in homepage properties and preview the page.",
+      "Edit the Visual Builder Studio template, update workflow triggers, and publish the home page.",
+      "Publish the page blindly and check in Production."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle Visual Builder Studio"
+  },
+  {
+    "id": 43,
+    "question": "You are deploying a Guided Journey that includes an AI agent. During deployment, at what stage do you embed the code?",
+    "options": [
+      "When creating a new business object in Visual Builder Studio.",
+      "When modifying the integration menu options.",
+      "When updating the Page Properties section in Visual Builder Studio to include the Guided Journey code.",
+      "When assigning the agent to the user role."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle HCM Experience Design Studio"
+  },
+  {
+    "id": 44,
+    "question": "A developer uses a Business Object to query and update benefits for an employee. How can you query details from a single enrollment?",
+    "options": [
+      "Add a new parameter to the 'Parameters and Business Object Fields'.",
+      "Use the 'Add From Specification' option to create a Business Object function for single enrollment.",
+      "Add the ID manually.",
+      "It is not possible to query single enrollments."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle Visual Builder/Business Object API"
+  },
+  {
+    "id": 45,
+    "question": "Which information contributes to the effectiveness of Agent Training in Oracle AI Studio?",
+    "options": [
+      "Monitoring evaluation scores, performance metrics, and user satisfaction scores.",
+      "By actually correlating offline testing correctness metrics with online A/B testing outcomes to generate data-driven decisions.",
+      "By providing usernames, start times, agent memory, prompts, and topics associated with each trace.",
+      "By reviewing the server logs only."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle AI Agent Studio - Training Effectiveness"
+  },
+  {
+    "id": 46,
+    "question": "A developer needs to allow users to navigate to the Invoices work area directly from an agent conversation. Which configuration enables this?",
+    "options": [
+      "Add a Document Tool containing the invoices policy and page link.",
+      "Configure an External REST Tool for the instance.",
+      "Create a deep link with the instance-relative URL, associate it with a Deep Link Tool, and assign to the Agent.",
+      "Use a Business Object Tool."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle AI Agent Studio - Deep Link Tool"
+  },
+  {
+    "id": 47,
+    "question": "A customer is integrating Oracle AI Agent Studio with a third-party HR system. The solution must support bi-directional data flow. Which tool combination?",
+    "options": [
+      "External REST Tool and Business Object Tool.",
+      "External REST Tool and Deep Link Tool.",
+      "Deep Link Tool and User Session Tool.",
+      "Document Tool and Deep Link Tool."
+    ],
+    "correctAnswer": 0,
+    "source": "Oracle AI Agent Studio - Integration Patterns"
+  },
+  {
+    "id": 50,
+    "question": "A Benefits Enrollment Agent prompts for dependent details but forgets them when selecting the health plan in the next step. How should you refine the setup?",
+    "options": [
+      "Set up separate workflows for dependents and health plans.",
+      "Adjust the prompt so that the model references earlier text.",
+      "Configure session variables to hold dependent details so they remain available when the health plan phase begins.",
+      "Ask the user to re-enter the data every time."
+    ],
+    "correctAnswer": 2,
+    "source": "Oracle AI Agent Studio - Session Management"
+  },
+  {
+    "id": 52,
+    "question": "What is the core difference between Agent Tracing and Prompt Tracing?",
+    "options": [
+      "Agent Tracing provides full visibility into usage and performance; Prompt Tracing analyzes each prompt individually.",
+      "Agent Tracing provides step-by-step visualization of multi-step executions; Prompt Tracing focuses on specific generation.",
+      "Agent Tracing is tied to compliance; Prompt Tracing is for debugging.",
+      "There is no difference."
+    ],
+    "correctAnswer": 1,
+    "source": "Oracle AI Agent Studio - Observability"
+  }
+];
+
+        // SVG icons as strings (simple versions)
+        const CheckIcon = () => (
+            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+        );
+
+        const XIcon = () => (
+            <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        );
+
+        const ChevronLeftIcon = () => (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        );
+
+        const ChevronRightIcon = () => (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
+        );
+
+        const AwardIcon = () => (
+            <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="6" strokeWidth="2"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 14l-2 8 6-3 6 3-2-8"/>
+            </svg>
+        );
+
+        const RefreshIcon = () => (
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+        );
+
+        const SettingsIcon = () => (
+            <svg className="inline w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+        );
+
+        function App() {
+            const [currentView, setCurrentView] = useState('dashboard');
+            const [questions, setQuestions] = useState([]);
+            const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+            const [userAnswers, setUserAnswers] = useState({});
+            const [instantFeedback, setInstantFeedback] = useState(true);
+            const [quizCompleted, setQuizCompleted] = useState(false);
+            const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+            useEffect(() => {
+                const savedQuestions = localStorage.getItem('oracleQuizQuestions');
+                if (savedQuestions) {
+                    setQuestions(JSON.parse(savedQuestions));
+                } else {
+                    setQuestions(initialQuestions);
+                    localStorage.setItem('oracleQuizQuestions', JSON.stringify(initialQuestions));
+                }
+            }, []);
+
+            const startQuiz = () => {
+                setCurrentView('quiz');
+                setCurrentQuestionIndex(0);
+                setUserAnswers({});
+                setQuizCompleted(false);
+                setSelectedAnswer(null);
+            };
+
+            const handleAnswerSelect = (answerIndex) => {
+                if (instantFeedback && userAnswers[currentQuestionIndex] !== undefined) {
+                    return;
+                }
+                setSelectedAnswer(answerIndex);
+                if (instantFeedback) {
+                    setUserAnswers({ ...userAnswers, [currentQuestionIndex]: answerIndex });
+                }
+            };
+
+            const handleNext = () => {
+                if (!instantFeedback && selectedAnswer !== null) {
+                    setUserAnswers({ ...userAnswers, [currentQuestionIndex]: selectedAnswer });
+                }
+
+                if (currentQuestionIndex < questions.length - 1) {
+                    setCurrentQuestionIndex(currentQuestionIndex + 1);
+                    setSelectedAnswer(userAnswers[currentQuestionIndex + 1] ?? null);
+                } else {
+                    if (!instantFeedback && selectedAnswer !== null) {
+                        const finalAnswers = { ...userAnswers, [currentQuestionIndex]: selectedAnswer };
+                        setUserAnswers(finalAnswers);
+                    }
+                    setQuizCompleted(true);
+                    setCurrentView('results');
+                }
+            };
+
+            const handlePrevious = () => {
+                if (currentQuestionIndex > 0) {
+                    setCurrentQuestionIndex(currentQuestionIndex - 1);
+                    setSelectedAnswer(userAnswers[currentQuestionIndex - 1] ?? null);
+                }
+            };
+
+            const calculateScore = () => {
+                let correct = 0;
+                questions.forEach((q, index) => {
+                    if (userAnswers[index] === q.correctAnswer) {
+                        correct++;
+                    }
+                });
+                return {
+                    correct,
+                    total: questions.length,
+                    percentage: ((correct / questions.length) * 100).toFixed(1)
+                };
+            };
+
+            const addQuestion = (newQuestion) => {
+                const questionWithId = {
+                    ...newQuestion,
+                    id: Math.max(...questions.map(q => q.id), 0) + 1
+                };
+                const updatedQuestions = [...questions, questionWithId];
+                setQuestions(updatedQuestions);
+                localStorage.setItem('oracleQuizQuestions', JSON.stringify(updatedQuestions));
+            };
+
+            const Dashboard = () => (
+                <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
+                    <div className="max-w-2xl w-full">
+                        <div className="bg-white rounded-lg shadow-lg p-8 border-t-4 border-oracle-red">
+                            <h1 className="text-4xl font-bold text-gray-800 mb-2">
+                                Oracle Fusion AI Agent Studio Prep
+                            </h1>
+                            <p className="text-gray-600 mb-8">Test your knowledge and prepare for certification</p>
+                            
+                            <div className="bg-gray-50 rounded-lg p-6 mb-8">
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="text-center">
+                                        <p className="text-gray-600 text-sm mb-1">Total Questions</p>
+                                        <p className="text-3xl font-bold text-oracle-red">{questions.length}</p>
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="text-gray-600 text-sm mb-1">Passing Score</p>
+                                        <p className="text-3xl font-bold text-oracle-red">68%</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                onClick={startQuiz}
+                                className="w-full bg-oracle-red text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-red-700 transition-colors"
+                            >
+                                Start Quiz
+                            </button>
+
+                            <button
+                                onClick={() => setCurrentView('admin')}
+                                className="w-full mt-4 text-gray-500 text-sm hover:text-oracle-red transition-colors"
+                            >
+                                <SettingsIcon />
+                                Admin Mode
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            const Quiz = () => {
+                const currentQuestion = questions[currentQuestionIndex];
+                const isAnswered = userAnswers[currentQuestionIndex] !== undefined;
+                const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+
+                return (
+                    <div className="min-h-screen bg-gray-50 py-8 px-4">
+                        <div className="max-w-4xl mx-auto">
+                            <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+                                <div className="flex justify-between items-center mb-4">
+                                    <h2 className="text-xl font-semibold text-gray-800">
+                                        Question {currentQuestionIndex + 1} of {questions.length}
+                                    </h2>
+                                    <label className="flex items-center cursor-pointer">
+                                        <input
+                                            type="checkbox"
+                                            checked={instantFeedback}
+                                            onChange={(e) => setInstantFeedback(e.target.checked)}
+                                            className="mr-2 w-4 h-4 accent-oracle-red"
+                                        />
+                                        <span className="text-sm text-gray-700">Show Answers Instantly</span>
+                                    </label>
+                                </div>
+                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                    <div
+                                        className="bg-oracle-red h-2 rounded-full transition-all duration-300"
+                                        style={{ width: `${progress}%` }}
+                                    ></div>
+                                </div>
+                            </div>
+
+                            <div className="bg-white rounded-lg shadow-md p-8 mb-6">
+                                <p className="text-lg text-gray-800 mb-6 leading-relaxed">
+                                    {currentQuestion.question}
+                                </p>
+
+                                <div className="space-y-3">
+                                    {currentQuestion.options.map((option, index) => {
+                                        const isSelected = selectedAnswer === index;
+                                        const isCorrect = index === currentQuestion.correctAnswer;
+                                        const showFeedback = instantFeedback && isAnswered;
+
+                                        let optionClass = "border-2 p-4 rounded-lg cursor-pointer transition-all ";
+                                        
+                                        if (showFeedback) {
+                                            if (isSelected && isCorrect) {
+                                                optionClass += "border-green-500 bg-green-50";
+                                            } else if (isSelected && !isCorrect) {
+                                                optionClass += "border-red-500 bg-red-50";
+                                            } else if (isCorrect) {
+                                                optionClass += "border-green-500 bg-green-50";
+                                            } else {
+                                                optionClass += "border-gray-200 bg-white";
+                                            }
+                                        } else if (isSelected) {
+                                            optionClass += "border-oracle-red bg-red-50";
+                                        } else {
+                                            optionClass += "border-gray-200 hover:border-oracle-red bg-white";
+                                        }
+
+                                        return (
+                                            <div
+                                                key={index}
+                                                onClick={() => handleAnswerSelect(index)}
+                                                className={optionClass}
+                                            >
+                                                <div className="flex items-center justify-between">
+                                                    <span className="text-gray-800">{option}</span>
+                                                    {showFeedback && (
+                                                        <>
+                                                            {isCorrect && <CheckIcon />}
+                                                            {isSelected && !isCorrect && <XIcon />}
+                                                        </>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+
+                                {instantFeedback && isAnswered && (
+                                    <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
+                                        <p className="text-sm font-semibold text-blue-900 mb-1">Source:</p>
+                                        <p className="text-sm text-blue-800">{currentQuestion.source}</p>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="flex justify-between">
+                                <button
+                                    onClick={handlePrevious}
+                                    disabled={currentQuestionIndex === 0}
+                                    className="flex items-center px-6 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-700 font-semibold hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                >
+                                    <ChevronLeftIcon />
+                                    Previous
+                                </button>
+                                <button
+                                    onClick={handleNext}
+                                    disabled={!instantFeedback && selectedAnswer === null}
+                                    className="flex items-center px-6 py-3 bg-oracle-red text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                >
+                                    {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
+                                    <ChevronRightIcon />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                );
+            };
+
+            const Results = () => {
+                const score = calculateScore();
+                const passed = parseFloat(score.percentage) >= 68;
+
+                return (
+                    <div className="min-h-screen bg-gray-50 py-8 px-4">
+                        <div className="max-w-4xl mx-auto">
+                            <div className={`rounded-lg shadow-lg p-8 mb-8 ${passed ? 'bg-gradient-to-r from-green-500 to-green-600' : 'bg-gradient-to-r from-orange-500 to-red-500'}`}>
+                                <div className="text-center text-white">
+                                    <AwardIcon />
+                                    <h1 className="text-4xl font-bold mb-2">
+                                        {passed ? 'Certified Ready!' : 'Keep Studying'}
+                                    </h1>
+                                    <p className="text-xl mb-4">
+                                        {passed 
+                                            ? 'Congratulations! You\'re ready for the certification exam.' 
+                                            : 'You\'re getting there! Review the material and try again.'}
+                                    </p>
+                                    <div className="text-5xl font-bold mb-2">{score.percentage}%</div>
+                                    <p className="text-lg">
+                                        {score.correct} out of {score.total} correct
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+                                <h2 className="text-2xl font-bold text-gray-800 mb-6">Review Your Answers</h2>
+                                <div className="space-y-6">
+                                    {questions.map((question, index) => {
+                                        const userAnswer = userAnswers[index];
+                                        const isCorrect = userAnswer === question.correctAnswer;
+
+                                        return (
+                                            <div key={question.id} className="border-b pb-6 last:border-b-0">
+                                                <div className="flex items-start mb-3">
+                                                    <span className="font-semibold text-gray-700 mr-2">Q{index + 1}.</span>
+                                                    <p className="text-gray-800 flex-1">{question.question}</p>
+                                                    {isCorrect ? <CheckIcon /> : <XIcon />}
+                                                </div>
+                                                
+                                                <div className="ml-7 space-y-2">
+                                                    <div className={`p-3 rounded ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+                                                        <p className="text-sm font-semibold mb-1">
+                                                            {isCorrect ? 'Your Answer (Correct):' : 'Your Answer (Incorrect):'}
+                                                        </p>
+                                                        <p className="text-sm">{question.options[userAnswer]}</p>
+                                                    </div>
+                                                    
+                                                    {!isCorrect && (
+                                                        <div className="p-3 rounded bg-green-50 border border-green-200">
+                                                            <p className="text-sm font-semibold mb-1">Correct Answer:</p>
+                                                            <p className="text-sm">{question.options[question.correctAnswer]}</p>
+                                                        </div>
+                                                    )}
+                                                    
+                                                    <div className="p-3 rounded bg-blue-50 border border-blue-200">
+                                                        <p className="text-sm font-semibold mb-1">Source:</p>
+                                                        <p className="text-sm">{question.source}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            <button
+                                onClick={() => setCurrentView('dashboard')}
+                                className="w-full flex items-center justify-center px-6 py-4 bg-oracle-red text-white rounded-lg font-semibold text-lg hover:bg-red-700 transition-colors"
+                            >
+                                <RefreshIcon />
+                                Retake Quiz
+                            </button>
+                        </div>
+                    </div>
+                );
+            };
+
+            const Admin = () => {
+                const [formData, setFormData] = useState({
+                    question: '',
+                    optionA: '',
+                    optionB: '',
+                    optionC: '',
+                    optionD: '',
+                    correctAnswer: 0,
+                    source: ''
+                });
+
+                const handleSubmit = (e) => {
+                    e.preventDefault();
+                    const newQuestion = {
+                        question: formData.question,
+                        options: [formData.optionA, formData.optionB, formData.optionC, formData.optionD],
+                        correctAnswer: parseInt(formData.correctAnswer),
+                        source: formData.source
+                    };
+                    addQuestion(newQuestion);
+                    setFormData({
+                        question: '',
+                        optionA: '',
+                        optionB: '',
+                        optionC: '',
+                        optionD: '',
+                        correctAnswer: 0,
+                        source: ''
+                    });
+                    alert('Question added successfully!');
+                };
+
+                return (
+                    <div className="min-h-screen bg-gray-50 py-8 px-4">
+                        <div className="max-w-3xl mx-auto">
+                            <div className="bg-white rounded-lg shadow-md p-8">
+                                <div className="flex justify-between items-center mb-6">
+                                    <h1 className="text-3xl font-bold text-gray-800">Admin Mode</h1>
+                                    <button
+                                        onClick={() => setCurrentView('dashboard')}
+                                        className="text-gray-600 hover:text-oracle-red transition-colors"
+                                    >
+                                        ← Back to Dashboard
+                                    </button>
+                                </div>
+
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Question Text
+                                        </label>
+                                        <textarea
+                                            value={formData.question}
+                                            onChange={(e) => setFormData({ ...formData, question: e.target.value })}
+                                            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-oracle-red focus:outline-none"
+                                            rows="3"
+                                            required
+                                        />
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">Option A</label>
+                                            <input
+                                                type="text"
+                                                value={formData.optionA}
+                                                onChange={(e) => setFormData({ ...formData, optionA: e.target.value })}
+                                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-oracle-red focus:outline-none"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">Option B</label>
+                                            <input
+                                                type="text"
+                                                value={formData.optionB}
+                                                onChange={(e) => setFormData({ ...formData, optionB: e.target.value })}
+                                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-oracle-red focus:outline-none"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">Option C</label>
+                                            <input
+                                                type="text"
+                                                value={formData.optionC}
+                                                onChange={(e) => setFormData({ ...formData, optionC: e.target.value })}
+                                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-oracle-red focus:outline-none"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">Option D</label>
+                                            <input
+                                                type="text"
+                                                value={formData.optionD}
+                                                onChange={(e) => setFormData({ ...formData, optionD: e.target.value })}
+                                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-oracle-red focus:outline-none"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Correct Answer (0=A, 1=B, 2=C, 3=D)
+                                        </label>
+                                        <select
+                                            value={formData.correctAnswer}
+                                            onChange={(e) => setFormData({ ...formData, correctAnswer: e.target.value })}
+                                            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-oracle-red focus:outline-none"
+                                            required
+                                        >
+                                            <option value={0}>A</option>
+                                            <option value={1}>B</option>
+                                            <option value={2}>C</option>
+                                            <option value={3}>D</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Source Citation
+                                        </label>
+                                        <input
+                                            type="text"
+                                            value={formData.source}
+                                            onChange={(e) => setFormData({ ...formData, source: e.target.value })}
+                                            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-oracle-red focus:outline-none"
+                                            placeholder="e.g., Oracle AI Agent Studio - Documentation"
+                                            required
+                                        />
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        className="w-full bg-oracle-red text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors"
+                                    >
+                                        Add Question
+                                    </button>
+                                </form>
+
+                                <div className="mt-8 pt-8 border-t">
+                                    <h2 className="text-xl font-bold text-gray-800 mb-4">Current Question Bank</h2>
+                                    <p className="text-gray-600">
+                                        Total Questions: <span className="font-bold text-oracle-red">{questions.length}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            };
+
+            return (
+                <>
+                    {currentView === 'dashboard' && <Dashboard />}
+                    {currentView === 'quiz' && <Quiz />}
+                    {currentView === 'results' && <Results />}
+                    {currentView === 'admin' && <Admin />}
+                </>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
