@@ -3,6 +3,9 @@ import { ChevronLeft, ChevronRight, CheckCircle2, XCircle, Award, RefreshCw, Set
 import { initialQuestions } from './data/questions';
 import './index.css';
 
+// Version control - increment this when questions are updated to force reload
+const QUESTIONS_VERSION = '2.0'; // Updated with source links
+
 function App() {
   const [currentView, setCurrentView] = useState('dashboard'); // dashboard, settings, quiz, results, admin, studyguide
   const [questions, setQuestions] = useState([]);
@@ -14,12 +17,17 @@ function App() {
 
   // Load questions from localStorage or use initial data
   useEffect(() => {
+    const savedVersion = localStorage.getItem('oracleQuizVersion');
     const savedQuestions = localStorage.getItem('oracleQuizQuestions');
-    if (savedQuestions) {
-      setQuestions(JSON.parse(savedQuestions));
-    } else {
+
+    // If version doesn't match or no saved questions, reload from initial data
+    if (savedVersion !== QUESTIONS_VERSION || !savedQuestions) {
+      console.log('Loading new questions version:', QUESTIONS_VERSION);
       setQuestions(initialQuestions);
       localStorage.setItem('oracleQuizQuestions', JSON.stringify(initialQuestions));
+      localStorage.setItem('oracleQuizVersion', QUESTIONS_VERSION);
+    } else {
+      setQuestions(JSON.parse(savedQuestions));
     }
   }, []);
 
