@@ -9,7 +9,8 @@ export const initialQuestions = [
             "Makes prompt instructions reusable and easier to manage"
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio – Topics"
+        "source": "Oracle AI Agent Studio – Components of AI Agent Studio",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@ export const initialQuestions = [
             "While latency and tokens reveal efficiency/cost, correctness validates the factual accuracy of the answer."
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio - Monitoring and Analytics"
+        "source": "Oracle AI Agent Studio - Monitor and Evaluate AI Agents",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/monitor-and-evaluate-ai-agents.html"
     },
     {
         "id": 3,
@@ -33,7 +35,8 @@ export const initialQuestions = [
             "Offline testing focuses on optimizing agent performance, while A/B testing validates configuration effectiveness."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Evaluation & Testing"
+        "source": "Oracle AI Agent Studio - Monitor and Evaluate AI Agents",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/monitor-and-evaluate-ai-agents.html"
     },
     {
         "id": 4,
@@ -45,7 +48,8 @@ export const initialQuestions = [
             "By applying role-based access controls, enforcing API authentication, and enabling Oracle's guardrails."
         ],
         "correctAnswer": 3,
-        "source": "Oracle Fusion Security Reference & AI Agent Studio Guide"
+        "source": "Oracle Fusion Security Reference & AI Agent Studio Guide",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 5,
@@ -57,7 +61,8 @@ export const initialQuestions = [
             "Hardcode a response that always assumes 'Annual Leave'."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Prompt Engineering Best Practices"
+        "source": "Oracle AI Agent Studio - Prompt Engineering Best Practices",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaqa/what-are-some-general-best-practices-for-creating-prompts.html"
     },
     {
         "id": 6,
@@ -69,7 +74,8 @@ export const initialQuestions = [
             "Use a single general prompt for all financial queries."
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Managing Topics"
+        "source": "Oracle AI Agent Studio - Managing Topics",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 7,
@@ -81,7 +87,8 @@ export const initialQuestions = [
             "HCM Access Control List Initial Ingestion"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Document Tools"
+        "source": "Oracle AI Agent Studio - Create Guided Journeys",
+        "link": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25a/faiom/create-guided-journeys-for-faqs-in-order-management.html"
     },
     {
         "id": 8,
@@ -93,7 +100,8 @@ export const initialQuestions = [
             "Configure the agent to be open but use a password."
         ],
         "correctAnswer": 0,
-        "source": "Oracle Fusion Security Guide - AI Agents"
+        "source": "Oracle Fusion Security Guide - AI Agents",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 9,
@@ -105,7 +113,8 @@ export const initialQuestions = [
             "It disables the ability to use tools."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Orchestration"
+        "source": "Oracle AI Agent Studio - Orchestration",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 10,
@@ -117,7 +126,8 @@ export const initialQuestions = [
             "FND_GENAI_AGENT_RUNTIME_DUTY (FAI_GENAI_AGENT_RUNTIME_DUTY)"
         ],
         "correctAnswer": 3,
-        "source": "Oracle Fusion Security Reference (25D/26A)"
+        "source": "Oracle Fusion Security Reference (25D/26A)",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 11,
@@ -129,7 +139,8 @@ export const initialQuestions = [
             "Rely solely on the confidence score provided by the LLM."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Testing Strategy"
+        "source": "Oracle AI Agent Studio - Testing Strategy",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/monitor-and-evaluate-ai-agents.html"
     },
     {
         "id": 12,
@@ -141,7 +152,8 @@ export const initialQuestions = [
             "Remove all instructions and let the model guess."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Prompt Engineering"
+        "source": "Oracle AI Agent Studio - Prompt Engineering",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaqa/what-are-some-general-best-practices-for-creating-prompts.html"
     },
     {
         "id": 13,
@@ -153,7 +165,8 @@ export const initialQuestions = [
             "To orchestrate and route tasks to worker agents"
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agents – Multi-Agent Orchestration"
+        "source": "Oracle AI Agents – Multi-Agent Orchestration",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 14,
@@ -165,7 +178,8 @@ export const initialQuestions = [
             "External REST Tool"
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio – External REST Tool"
+        "source": "Oracle AI Agent Studio – External REST Tool",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 15,
@@ -177,7 +191,8 @@ export const initialQuestions = [
             "Add more policy-related terminology to match the Benefits policy manual."
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - User Experience Design"
+        "source": "Oracle AI Agent Studio - User Experience Design",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaqa/what-are-some-general-best-practices-for-creating-prompts.html"
     },
     {
         "id": 16,
@@ -189,7 +204,8 @@ export const initialQuestions = [
             "Direct the agent to use the Document Tool for compliance and keep the Deep Link."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Tool Usage"
+        "source": "Oracle AI Agent Studio - Tool Usage",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 17,
@@ -201,7 +217,8 @@ export const initialQuestions = [
             "Use a Document tool to parse the columns."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Business Object Tool Configuration"
+        "source": "Oracle AI Agent Studio - Business Object Tool Configuration",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 18,
@@ -213,7 +230,8 @@ export const initialQuestions = [
             "FAI GenAI Agent HCM Administrator Duty"
         ],
         "correctAnswer": 2,
-        "source": "Oracle Fusion Security Reference"
+        "source": "Oracle Fusion Security Reference",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 19,
@@ -225,7 +243,8 @@ export const initialQuestions = [
             "Set up a Calculator Tool for pay calculations and a Documents Tool for policy."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Tool Usage"
+        "source": "Oracle AI Agent Studio - Tool Usage",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 20,
@@ -237,7 +256,8 @@ export const initialQuestions = [
             "The agent was deleted."
         ],
         "correctAnswer": 2,
-        "source": "Oracle Fusion REST API Update Policy"
+        "source": "Oracle Fusion REST API Update Policy",
+        "link": "https://docs.oracle.com/en/cloud/saas/readiness/common/25d/common25d/25D-common-wn-f40966.htm"
     },
     {
         "id": 21,
@@ -249,7 +269,8 @@ export const initialQuestions = [
             "Grant full admin access to all users."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Security Setup"
+        "source": "Oracle AI Agent Studio - Security Setup",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 22,
@@ -261,7 +282,8 @@ export const initialQuestions = [
             "OAuth 2.0 and data encryption using AES-256."
         ],
         "correctAnswer": 3,
-        "source": "Oracle Cloud Infrastructure Security Guide"
+        "source": "Oracle Cloud Infrastructure Security Guide",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 23,
@@ -273,7 +295,8 @@ export const initialQuestions = [
             "Enable detailed audit logging for payroll data access only."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - External REST Security"
+        "source": "Oracle AI Agent Studio - External REST Security",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 24,
@@ -285,7 +308,8 @@ export const initialQuestions = [
             "An instruction where you can enter the question for the agent"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio – Prompts and Instructions"
+        "source": "Oracle AI Agent Studio – Prompts and Instructions",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaqa/what-are-some-general-best-practices-for-creating-prompts.html"
     },
     {
         "id": 25,
@@ -297,7 +321,8 @@ export const initialQuestions = [
             "Enable the API access key."
         ],
         "correctAnswer": 2,
-        "source": "Oracle Fusion Security Console"
+        "source": "Oracle Fusion Security Console",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 26,
@@ -309,7 +334,8 @@ export const initialQuestions = [
             "Get all opportunities with a filter on opportunity number."
         ],
         "correctAnswer": 3,
-        "source": "Oracle Visual Builder/Business Object API"
+        "source": "Oracle Visual Builder/Business Object API",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 27,
@@ -321,7 +347,8 @@ export const initialQuestions = [
             "It provides a list of all employees in the entire organization."
         ],
         "correctAnswer": 1,
-        "source": "Oracle HCM Cloud Documentation"
+        "source": "Oracle HCM Cloud Documentation",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 28,
@@ -333,7 +360,8 @@ export const initialQuestions = [
             "To avoid using Business Objects."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Integrations"
+        "source": "Oracle AI Agent Studio - Integrations",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 29,
@@ -345,7 +373,8 @@ export const initialQuestions = [
             "Add a Business Object Tool for inventory with role-based access and configure an External REST call."
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio - Tooling"
+        "source": "Oracle AI Agent Studio - Tooling",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 30,
@@ -357,7 +386,8 @@ export const initialQuestions = [
             "CREATE, READ, UPDATE, DELETE (CRUD) only"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Business Object Operations"
+        "source": "Oracle AI Agent Studio - Business Object Operations",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 31,
@@ -369,7 +399,8 @@ export const initialQuestions = [
             "A link to an external resource with information on the external API."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - REST Tool Definition"
+        "source": "Oracle AI Agent Studio - REST Tool Definition",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 32,
@@ -381,7 +412,8 @@ export const initialQuestions = [
             "Hardcode it in every agent."
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Topic Management"
+        "source": "Oracle AI Agent Studio - Topic Management",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 33,
@@ -393,7 +425,8 @@ export const initialQuestions = [
             "Only activation is required; preview is recommended."
         ],
         "correctAnswer": 3,
-        "source": "Oracle HCM Guided Journeys Guide"
+        "source": "Oracle HCM Guided Journeys Guide",
+        "link": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25a/faiom/create-guided-journeys-for-faqs-in-order-management.html"
     },
     {
         "id": 34,
@@ -405,7 +438,8 @@ export const initialQuestions = [
             "Both Create the Guided Journey Task AND Enter the Code in Page Properties."
         ],
         "correctAnswer": 3,
-        "source": "Oracle HCM Experience Design Studio"
+        "source": "Oracle HCM Experience Design Studio",
+        "link": "https://docs.oracle.com/en/cloud/saas/human-resources/faair/configure-agent-guided-journey.html"
     },
     {
         "id": 35,
@@ -417,7 +451,8 @@ export const initialQuestions = [
             "In Guided Journeys, create a new journey."
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Deployment"
+        "source": "Oracle AI Agent Studio - Deployment",
+        "link": "https://docs.oracle.com/en/cloud/saas/human-resources/faair/configure-agent-guided-journey.html"
     },
     {
         "id": 36,
@@ -429,7 +464,8 @@ export const initialQuestions = [
             "Upload new documents directly to the Document Tool and run the Process Agent Documents ESS process."
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio - Knowledge Management"
+        "source": "Oracle AI Agent Studio - Knowledge Management",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 37,
@@ -441,7 +477,8 @@ export const initialQuestions = [
             "Assign only FAI GenAI Agent Runtime Duty."
         ],
         "correctAnswer": 0,
-        "source": "Oracle Identity Manager / Security Console"
+        "source": "Oracle Identity Manager / Security Console",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 38,
@@ -453,7 +490,8 @@ export const initialQuestions = [
             "Remove the persona section."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Prompt Engineering"
+        "source": "Oracle AI Agent Studio - Prompt Engineering",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaqa/what-are-some-general-best-practices-for-creating-prompts.html"
     },
     {
         "id": 39,
@@ -465,7 +503,8 @@ export const initialQuestions = [
             "Latency of response generation from input to output."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Automated Testing"
+        "source": "Oracle AI Agent Studio - Automated Testing",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/monitor-and-evaluate-ai-agents.html"
     },
     {
         "id": 40,
@@ -477,7 +516,8 @@ export const initialQuestions = [
             "The Guided Journey code was entered in a property field not associated with the homepage experience."
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Deployment Lifecycle"
+        "source": "Oracle AI Agent Studio - Deployment Lifecycle",
+        "link": "https://docs.oracle.com/en/cloud/saas/human-resources/faair/configure-agent-guided-journey.html"
     },
     {
         "id": 41,
@@ -489,7 +529,8 @@ export const initialQuestions = [
             "Preview mode is required to generate the Guided Journey's activation code."
         ],
         "correctAnswer": 1,
-        "source": "Oracle Visual Builder Studio"
+        "source": "Oracle Visual Builder Studio",
+        "link": "https://docs.oracle.com/en/cloud/saas/human-resources/faair/configure-agent-guided-journey.html"
     },
     {
         "id": 42,
@@ -501,7 +542,8 @@ export const initialQuestions = [
             "Publish the page blindly and check in Production."
         ],
         "correctAnswer": 1,
-        "source": "Oracle Visual Builder Studio"
+        "source": "Oracle Visual Builder Studio",
+        "link": "https://docs.oracle.com/en/cloud/saas/human-resources/faair/configure-agent-guided-journey.html"
     },
     {
         "id": 43,
@@ -513,7 +555,8 @@ export const initialQuestions = [
             "When assigning the agent to the user role."
         ],
         "correctAnswer": 2,
-        "source": "Oracle HCM Experience Design Studio"
+        "source": "Oracle HCM Experience Design Studio",
+        "link": "https://docs.oracle.com/en/cloud/saas/human-resources/faair/configure-agent-guided-journey.html"
     },
     {
         "id": 44,
@@ -525,7 +568,8 @@ export const initialQuestions = [
             "It is not possible to query single enrollments."
         ],
         "correctAnswer": 1,
-        "source": "Oracle Visual Builder/Business Object API"
+        "source": "Oracle Visual Builder/Business Object API",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 45,
@@ -537,7 +581,8 @@ export const initialQuestions = [
             "By reviewing the server logs only."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Training Effectiveness"
+        "source": "Oracle AI Agent Studio - Training Effectiveness",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/monitor-and-evaluate-ai-agents.html"
     },
     {
         "id": 46,
@@ -549,7 +594,8 @@ export const initialQuestions = [
             "Use a Business Object Tool."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Deep Link Tool"
+        "source": "Oracle AI Agent Studio - Deep Link Tool",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 47,
@@ -561,7 +607,8 @@ export const initialQuestions = [
             "Document Tool and Deep Link Tool."
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Integration Patterns"
+        "source": "Oracle AI Agent Studio - Integration Patterns",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 48,
@@ -573,7 +620,8 @@ export const initialQuestions = [
             "Allowing access to all system data"
         ],
         "correctAnswer": 0,
-        "source": "Oracle Fusion AI – RAG and Grounding"
+        "source": "Oracle Fusion AI – RAG and Grounding",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 49,
@@ -585,7 +633,8 @@ export const initialQuestions = [
             "Disable the Human in the Loop feature"
         ],
         "correctAnswer": 1,
-        "source": "Oracle Fusion Security – Permission Groups"
+        "source": "Oracle Fusion Security – Permission Groups",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 50,
@@ -597,7 +646,8 @@ export const initialQuestions = [
             "Ask the user to re-enter the data every time."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Session Management"
+        "source": "Oracle AI Agent Studio - Session Management",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaqa/what-are-some-general-best-practices-for-creating-prompts.html"
     },
     {
         "id": 51,
@@ -609,7 +659,8 @@ export const initialQuestions = [
             "Configuring additional hardware resources"
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio – Topics"
+        "source": "Oracle AI Agent Studio – Topics",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 52,
@@ -621,7 +672,8 @@ export const initialQuestions = [
             "There is no difference."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Observability"
+        "source": "Oracle AI Agent Studio - Observability",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/monitor-and-evaluate-ai-agents.html"
     },
     {
         "id": 53,
@@ -633,7 +685,8 @@ export const initialQuestions = [
             "When the task is a simple request with no dependencies"
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agents – Multi-Agent Orchestration"
+        "source": "Oracle AI Agents – Multi-Agent Orchestration",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 54,
@@ -645,7 +698,8 @@ export const initialQuestions = [
             "ORA_DR_FAI_GENERATIVE_AI_AGENT_HCM_ADMINISTRATOR_DUTY"
         ],
         "correctAnswer": 2,
-        "source": "Oracle Fusion Apps Security – AI Agent Provisioning"
+        "source": "Oracle Fusion Apps Security – AI Agent Provisioning",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 55,
@@ -657,7 +711,8 @@ export const initialQuestions = [
             "They adjust UI themes"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio – Guardrails"
+        "source": "Oracle AI Agent Studio – Guardrails",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 56,
@@ -669,7 +724,8 @@ export const initialQuestions = [
             "Allows agents to write and approve their own changes"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio – Human in the Loop"
+        "source": "Oracle AI Agent Studio – Human in the Loop",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 57,
@@ -681,7 +737,8 @@ export const initialQuestions = [
             "Backup Scheduling"
         ],
         "correctAnswer": 0,
-        "source": "Oracle Fusion Security – Permission Groups"
+        "source": "Oracle Fusion Security – Permission Groups",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 58,
@@ -693,7 +750,8 @@ export const initialQuestions = [
             "External plugin modules"
         ],
         "correctAnswer": 1,
-        "source": "Oracle Fusion Security – RBAC"
+        "source": "Oracle Fusion Security – RBAC",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 59,
@@ -705,7 +763,8 @@ export const initialQuestions = [
             "To instruct the AI agent to condense information into a concise output"
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio – Prompt Engineering"
+        "source": "Oracle AI Agent Studio – Prompt Engineering",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaqa/what-are-some-general-best-practices-for-creating-prompts.html"
     },
     {
         "id": 60,
@@ -717,7 +776,8 @@ export const initialQuestions = [
             "They allow upload of text and images"
         ],
         "correctAnswer": 0,
-        "source": "Oracle Fusion Apps – Business Objects"
+        "source": "Oracle Fusion Apps – Business Objects",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 61,
@@ -729,7 +789,8 @@ export const initialQuestions = [
             "Semantic search on uploaded unstructured documents"
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio – Document Tool"
+        "source": "Oracle AI Agent Studio – Document Tool",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 62,
@@ -741,7 +802,8 @@ export const initialQuestions = [
             "A static analytics report"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio – Introduction"
+        "source": "Oracle AI Agent Studio – Introduction",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 63,
@@ -753,7 +815,8 @@ export const initialQuestions = [
             "They process only financial data"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio – Templates"
+        "source": "Oracle AI Agent Studio – Templates",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 64,
@@ -765,7 +828,8 @@ export const initialQuestions = [
             "To manage application upgrades"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio – What Agents Do"
+        "source": "Oracle AI Agent Studio – What Agents Do",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 65,
@@ -777,7 +841,8 @@ export const initialQuestions = [
             "Include as many related instructions as possible"
         ],
         "correctAnswer": 2,
-        "source": "Oracle Prompt Engineering – Best Practices"
+        "source": "Oracle Prompt Engineering – Best Practices",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaqa/what-are-some-general-best-practices-for-creating-prompts.html"
     },
     {
         "id": 66,
@@ -789,7 +854,8 @@ export const initialQuestions = [
             "Run the Process Agent Documents scheduled process"
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio – Document Processing"
+        "source": "Oracle AI Agent Studio – Document Processing",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 67,
@@ -801,7 +867,8 @@ export const initialQuestions = [
             "Processing external RSS feeds"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio – Business Object Tool"
+        "source": "Oracle AI Agent Studio – Business Object Tool",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     },
     {
         "id": 68,
@@ -813,6 +880,7 @@ export const initialQuestions = [
             "Document Tool"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio – Topics"
+        "source": "Oracle AI Agent Studio – Topics",
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
     }
 ];
