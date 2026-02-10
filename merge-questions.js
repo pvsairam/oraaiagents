@@ -3,15 +3,15 @@
 const existingQuestions = [
     {
         "id": 2,
-        "question": "As an implementer of AI agents, you are responsible for evaluating their performance with latency and token metrics. Why is it important to consider these alongside correctness?",
+        "question": "As an implementer of AI agents, you are responsible for evaluating their performance with latency and token metrics for each interaction. Why is it important to consider latency and token metrics alongside correctness when assessing the overall performance?",
         "options": [
-            "While latency and tokens reveal efficiency, correctness only validates semantic memory.",
-            "While latency and tokens control 'Complete' status, correctness validates factual alignment.",
-            "Correctness checks only logical consistency.",
-            "While latency and tokens reveal efficiency/cost, correctness validates the factual accuracy of the answer."
+            "While latency and tokens reveal the efficiency and cost performance of the agent, correctness only validates semantic memory.",
+            "While latency and tokens directly control whether a response is marked 'Complete' or not, correctness validates the factual alignment with expected results.",
+            "While latency and tokens help ensure the actual outputs generated adhere to the formatting and structural requirements of the expected responses, correctness checks only logical consistency.",
+            "While latency and tokens reveal the efficiency and cost performance of the agent, correctness validates the factual accuracy of the answer."
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio - Monitoring and Analytics"
+        [cite_start]"source": "Oracle AI Agent Studio - Monitoring and Analytics [cite: 347, 352]"
     },
     {
         "id": 3,
@@ -19,47 +19,45 @@ const existingQuestions = [
         "options": [
             "Offline testing requires manual verification, while A/B testing uses automated metrics.",
             "Offline testing ensures evaluation against reference answers before launch, while A/B testing checks live sentiment.",
-            "Offline testing validates latency before production, while A/B testing validates semantic correctness.",
-            "Offline testing focuses on optimizing agent performance, while A/B testing validates configuration effectiveness."
+            "Offline testing validates latency and token consumption before production, while A/B testing validates semantic correctness.",
+            "Offline testing focuses on optimizing agent performance, while A/B testing validates the effectiveness of different agent configurations."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Evaluation & Testing"
+        [cite_start]"source": "Oracle AI Agent Studio - Evaluation & Testing [cite: 358]"
     },
     {
         "id": 4,
-        "question": "Fusion Applications accessing sensitive employee data requires safeguarding personal information. How does the solution address these security requirements?",
+        "question": "Fusion Applications that will access sensitive employee data has requested a clear explanation of how the solution safeguards personal information. How does the solution address these security and compliance requirements?",
         "options": [
             "By using keys to secure and stateless providers for encryption.",
-            "By granting open access to all tools and APIs within the agent to streamline integration.",
+            "By granting open access to all tools and APIs within the agent to streamline integration, restricting security checks.",
             "By relying on prompt-based instructions to disable data aggregation.",
-            "By applying role-based access controls, enforcing API authentication, and enabling Oracle's guardrails."
+            "By applying role-based access controls, enforcing API authentication, and enabling Oracle's guardrails for toxicity and prompt injection."
         ],
         "correctAnswer": 3,
-        "source": "Oracle Fusion Security Reference & AI Agent Studio Guide"
+        [cite_start]"source": "Oracle Fusion Security Reference & AI Agent Studio Guide [cite: 371]"
     },
     {
         "id": 5,
-        "question": "A Leave & Absence agent frequently receives vague queries like 'Leave'. As a prompt designer, what should you do?",
+        "question": "A Leave & Absence agent in Fusion Applications frequently receives vague user queries such as 'Leave'. As a prompt designer, what should you do to improve accuracy?",
         "options": [
-            "Keep the system prompt minimal and allow the AI to infer intent.",
-            "Require users to ask questions as full sentences.",
-            "Define clear rules in the system prompt for ambiguous queries and instruct the agent to ask for clarification.",
-            "Hardcode a response that always assumes 'Annual Leave'."
+            "Keep the system prompt minimal and allow the AI model to infer intent from the user's context.",
+            "Require users to ask questions as full sentences to enhance the model's intent recognition.",
+            "Define clear rules in the system prompt for handling ambiguous queries and instruct the agent to ask users for clarification."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Prompt Engineering Best Practices"
+        [cite_start]"source": "Oracle AI Agent Studio - Prompt Engineering Best Practices [cite: 380]"
     },
     {
         "id": 6,
-        "question": "A financial services company wants an agent to provide tailored guidance for regulatory, tax, and audit queries. How should this be configured?",
+        "question": "A financial services company wants an agent to provide tailored guidance for regulatory, tax, and audit queries, handling each with the correct logic and escalation path. How should this be configured to support this requirement in Oracle AI Agent Studio?",
         "options": [
             "Create separate Topics for regulatory, tax, and audit queries.",
             "A single Topic for regulatory, tax, and audit queries.",
-            "Configure a Business Object Tool for regulatory, tax, and audit queries.",
-            "Use a single general prompt for all financial queries."
+            "Configure a Business Object Tool for regulatory, tax, and audit queries."
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Managing Topics"
+        [cite_start]"source": "Oracle AI Agent Studio - Managing Topics [cite: 387]"
     },
     {
         "id": 7,
@@ -71,19 +69,16 @@ const existingQuestions = [
             "HCM Access Control List Initial Ingestion"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Document Tools"
+        [cite_start]"source": "Oracle AI Agent Studio - Document Tools [cite: 393]"
     },
     {
         "id": 8,
         "question": "A business needs to restrict access to a specific AI Agent. As the Agent Team administrator, which configuration applies?",
         "options": [
-            "Assign the Agent Team to a custom role with the Access Intelligent Agent Chat privilege.",
-            "Assign the Agent Team to a public group.",
-            "Assign the Agent Team to a duty role without specific privileges.",
-            "Configure the agent to be open but use a password."
+            "Assign the Agent Team to a custom role with the Access Intelligent Agent Chat privilege."
         ],
         "correctAnswer": 0,
-        "source": "Oracle Fusion Security Guide - AI Agents"
+        [cite_start]"source": "Oracle Fusion Security Guide - AI Agents [cite: 403]"
     },
     {
         "id": 9,
@@ -91,15 +86,14 @@ const existingQuestions = [
         "options": [
             "It increases the risk of errors without affecting completion time.",
             "It allows subtasks to run concurrently, reducing the overall completion time.",
-            "It causes subtasks to run sequentially, increasing completion time.",
-            "It disables the ability to use tools."
+            "It causes subtasks to run sequentially, increasing completion time."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Orchestration"
+        [cite_start]"source": "Oracle AI Agent Studio - Orchestration [cite: 407]"
     },
     {
         "id": 10,
-        "question": "Which privilege must be assigned to enable an employee to access and test an AI Agent in Oracle Fusion Applications?",
+        "question": "An Oracle Fusion Applications administrator is configuring user access to allow employees to interact with and test AI Agents at runtime. Which privilege must be assigned to enable an employee to access and test an AI Agent in Oracle Fusion Applications?",
         "options": [
             "FND_GENAI_MANAGER",
             "FND_GENAI_MANAGER_DUTY",
@@ -107,35 +101,33 @@ const existingQuestions = [
             "FND_GENAI_AGENT_RUNTIME_DUTY (FAI_GENAI_AGENT_RUNTIME_DUTY)"
         ],
         "correctAnswer": 3,
-        "source": "Oracle Fusion Security Reference (25D/26A)"
+        [cite_start]"source": "Oracle Fusion Security Reference (25D/26A) [cite: 419]"
     },
     {
         "id": 11,
-        "question": "You need to ensure agent answers match the official return policy and errors are identified before deployment. How do you confirm correctness?",
+        "question": "You need to ensure agent answers match the official return policy and that any errors are identified before deployment. How can you confirm that the agent's responses are correct and meet business requirements?",
         "options": [
             "Have each customer service representative approve the responses individually.",
-            "Refer against the documentation provided by the agent development team.",
-            "Test the agent with real-world questions and verify answers against the official policy.",
-            "Rely solely on the confidence score provided by the LLM."
+            "Refer against the documentation provided by the agent development team to ensure accuracy of answers.",
+            "Test the agent with real-world questions and verify answers against the official policy."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Testing Strategy"
+        [cite_start]"source": "Oracle AI Agent Studio - Testing Strategy [cite: 426]"
     },
     {
         "id": 12,
-        "question": "An agent frequently provides incomplete answers regarding job application status. How can you refine the system prompt?",
+        "question": "You notice an agent frequently provides incomplete answers when candidates ask about job application status. How can you refine the system prompt to improve the clarity and reliability of the agent's responses?",
         "options": [
-            "Make the system prompt longer by adding more information regardless of structure.",
+            "Make the system prompt longer by adding more information, regardless of structure.",
             "Use a complex SQL structure for the system reasoning.",
-            "Break the system prompt into concise, step-by-step instructions that clearly outline expected actions.",
-            "Remove all instructions and let the model guess."
+            "Break the system prompt into concise, step-by-step instructions that clearly outline the agent's expected actions."
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Prompt Engineering"
+        [cite_start]"source": "Oracle AI Agent Studio - Prompt Engineering [cite: 433]"
     },
     {
         "id": 15,
-        "question": "The system prompt for a Benefits Agent says 'Display benefit enrollment data' and employees find answers confusing. How should you refine it?",
+        "question": "The system prompt for a Benefits Agent currently says: 'Display benefit enrollment data'. Employees find the answers confusing. How should you refine the system prompt to improve clarity and user experience?",
         "options": [
             "Rephrase the prompt to 'Show my current health plan and who is covered'.",
             "Shorten the prompt to make it more concise.",
@@ -143,31 +135,30 @@ const existingQuestions = [
             "Add more policy-related terminology to match the Benefits policy manual."
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - User Experience Design"
+        [cite_start]"source": "Oracle AI Agent Studio - User Experience Design [cite: 439]"
     },
     {
         "id": 16,
-        "question": "An outbound compliance agent query must be grounded solely in internal policy and minimize tool calls. What modification should you make?",
+        "question": "An outbound compliance agent retrieves the query 'What placards do I need for shipment?'. It must be grounded solely in internal policy and wants to minimize the number of tool calls. What modification should you make to reduce tool calls while ensuring answers are based only on permissions policy?",
         "options": [
-            "Keep existing tools active and expand the policy coverage.",
-            "Replace the document-based policy reference with a Business Object configuration.",
-            "Disable the Deep Link capability so users remain within Fusion.",
-            "Direct the agent to use the Document Tool for compliance and keep the Deep Link."
+            "Keep existing tools active and expand the policy coverage...",
+            "Replace the document-based policy reference with a Business Object configuration to the agent...",
+            "Disable the Deep Link capability so users remain within Fusion...",
+            "Direct the agent to use the Document Tool for compliance and keep the Deep Link for navigation"
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Tool Usage"
+        [cite_start]"source": "Oracle AI Agent Studio - Tool Usage [cite: 448]"
     },
     {
         "id": 17,
         "question": "How should you configure the AI agent to display only selected columns in the REST API response for specific opportunity questions?",
         "options": [
-            "Select a business object that only retrieves the required fields.",
-            "Update the business object function to include all fields and then filter.",
-            "Select the specific fields required in the 'Parameters and Business Object Fields' section.",
-            "Use a Document tool to parse the columns."
+            "Select a business object that only retrieves the required fields",
+            "Update the business object function to include all the fields and then filter the results",
+            "Select the specific fields required in the 'Parameters and Business Object Fields' section"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Business Object Tool Configuration"
+        [cite_start]"source": "Oracle AI Agent Studio - Business Object Tool Configuration [cite: 458]"
     },
     {
         "id": 18,
@@ -179,367 +170,350 @@ const existingQuestions = [
             "FAI GenAI Agent HCM Administrator Duty"
         ],
         "correctAnswer": 2,
-        "source": "Oracle Fusion Security Reference"
+        [cite_start]"source": "Oracle Fusion Security Reference [cite: 464]"
     },
     {
         "id": 19,
-        "question": "You are designing an agent to help employees view pay slips and calculate pay with strict access controls. Which configuration meets these requirements?",
+        "question": "You are designing an agent in Oracle Fusion AI Agent Studio to help employees view pay slips and calculate pay. The solution must strictly enforce access controls (users can only see their own data). Which configuration meets these requirements?",
         "options": [
-            "Configure a Document Tool with pay policy PDFs and assign a Topic.",
-            "Use an External REST Tool to connect to an external payroll provider.",
-            "Use a Business Object Tool for pay data, a Deep Link Tool for payslip details, and a Calculator Tool.",
-            "Set up a Calculator Tool for pay calculations and a Documents Tool for policy."
+            "Configure a Document Tool with pay policy PDFs and assign a Topic for pay calculations",
+            "Use an External REST Tool to connect to an external payroll provider and a Document Tool for pay statements",
+            "Use a Business Object Tool for pay data, a Deep Link Tool for payslip details, a Calculator Tool for pay calculations, and the Context Tool to enforce access controls",
+            "Set up a Calculator Tool for pay calculations and a Documents Tool to provide pay policy information"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Tool Usage"
+        [cite_start]"source": "Oracle AI Agent Studio - Tool Usage [cite: 475]"
     },
     {
         "id": 20,
-        "question": "After a quarterly update, users report an agent is no longer able to retrieve invoices. What is the likely cause?",
+        "question": "After a quarterly update, users have reported that an agent is no longer able to retrieve invoices. What is the likely cause?",
         "options": [
-            "The quarterly update deprecated the REST API, requiring a switch to SOAP.",
-            "The agent's prompt and topics were overwritten.",
-            "The quarterly update changed the API version path (e.g. from 11.13.18.05 to 11.13.18.06).",
-            "The agent was deleted."
+            "The quarterly update deprecated the REST API, requiring all integrations to switch to SOAP",
+            "The agent's prompt and topics were overwritten during the update, leading to incomplete conversational flows",
+            "The quarterly update changed the API version path (e.g. from 11.13.18.05 to 11.13.18.06) for custom business objects"
         ],
         "correctAnswer": 2,
-        "source": "Oracle Fusion REST API Update Policy"
+        [cite_start]"source": "Oracle Fusion REST API Update Policy [cite: 479]"
     },
     {
         "id": 21,
-        "question": "A company wants to assign specific roles for configuration vs deployment. Which roles ensure appropriate access control?",
+        "question": "A company wants to assign specific roles for configuration vs deployment. Which roles should be assigned to each group to ensure appropriate access control?",
         "options": [
-            "Assign the Application Implementation Consultant role to administrators.",
-            "Assign App Implementation Consultant to admins, and create a custom role with 'Access Intelligent Agent Chat' for end users.",
-            "Assign product family-specific admin roles with permission groups enabled.",
-            "Grant full admin access to all users."
+            "Assign the Application Implementation Consultant role with permission groups for administrators...",
+            "Assign the Application Implementation Consultant role with permission groups for administrators, and create a custom role with 'Access Intelligent Agent Chat' privilege for end users",
+            "Assign product family-specific admin roles with permission groups enabled for administrators..."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Security Setup"
+        [cite_start]"source": "Oracle AI Agent Studio - Security Setup [cite: 486]"
     },
     {
         "id": 22,
-        "question": "Which security mechanism and data encryption standard is recommended when integrating the AI agent with an external REST service?",
+        "question": "You need to secure an external REST integration. Which security mechanism and data encryption standard is recommended when integrating the AI agent with the external service?",
         "options": [
-            "OpenID Connect and data encryption using RSA.",
-            "OAuth 2.0 and data encryption using PGP.",
-            "Basic authentication and SSL/TLS encryption.",
-            "OAuth 2.0 and data encryption using AES-256."
+            "OpenID Connect and data encryption using RSA",
+            "OAuth 2.0 and data encryption using PGP",
+            "Basic authentication and SSL/TLS encryption",
+            "OAuth 2.0 and data encryption using AES-256"
         ],
         "correctAnswer": 3,
-        "source": "Oracle Cloud Infrastructure Security Guide"
+        [cite_start]"source": "Oracle Cloud Infrastructure Security Guide [cite: 493]"
     },
     {
         "id": 23,
         "question": "An Oracle AI agent accesses an external provider via REST API to query payroll data. How can you ensure security compliance?",
         "options": [
-            "Allow all authenticated users to access payroll data.",
-            "Require multi-factor authentication for agent access.",
-            "Configure the REST tool to restrict agent access to users with the designated HR role.",
-            "Enable detailed audit logging for payroll data access only."
+            "Allow all authenticated users to access payroll data and HTTP endpoints...",
+            "Require multi-factor authentication for agent access and allow department managers to approve payroll queries",
+            "Configure the REST tool to log all data access events and restrict agent access to users with the designated HR role",
+            "Enable detailed audit logging for payroll data access and use HTTPS endpoints"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - External REST Security"
+        [cite_start]"source": "Oracle AI Agent Studio - External REST Security [cite: 502]"
     },
     {
         "id": 25,
-        "question": "A Consultant needs to enable a custom role to chat with an agent. Which step in the Security Console is essential?",
+        "question": "A global company wants to use Oracle AI Agent Studio... specific procedures for each region, and wants to ensure that users receive guidance in their local language and according to their region's policy. How should you organize Topics to support this requirement?",
         "options": [
-            "Enable permission groups for the custom role and assign duty roles.",
-            "Assign a custom role to the user and manually adjust data security.",
-            "Add the 'Access Intelligent Agent Chat' privilege to the user's role.",
-            "Enable the API access key."
+            "Create Topics by language and region",
+            "Upload regional policy documents with a Document Tool",
+            "Use a single Topic with all translations and policies combined"
         ],
-        "correctAnswer": 2,
-        "source": "Oracle Fusion Security Console"
+        "correctAnswer": 0,
+        [cite_start]"source": "Oracle AI Agent Studio - Multi-language Support [cite: 515]"
     },
     {
         "id": 26,
-        "question": "When adding a new business object function using 'Add from Specification' to retrieve opportunity details by number, what is the correct setup?",
+        "question": "A Implementation Consultant needs to enable a custom role to chat with an agent. Which step in the Security Console is essential to enable this capability?",
         "options": [
-            "Get all opportunities.",
-            "Create opportunity with a parameter for opportunity number.",
-            "Update opportunity with a parameter.",
-            "Get all opportunities with a filter on opportunity number."
+            "Enable permission groups for the custom role and assign the relevant duty roles for each product family",
+            "Assign a custom role to the user, add all desired privilege codes, and manually adjust data security policy...",
+            "Add to the user and enable the Access Intelligent Agent Chat privilege"
         ],
-        "correctAnswer": 3,
-        "source": "Oracle Visual Builder/Business Object API"
+        "correctAnswer": 2,
+        [cite_start]"source": "Oracle Fusion Security Console [cite: 529]"
     },
     {
         "id": 27,
-        "question": "Which operation is used in the Business Object tool to retrieve team details?",
+        "question": "When adding a new business object function using 'Add from Specification' to retrieve opportunity details by opportunity number, what is the correct setup?",
         "options": [
-            "Uses the 'Get Manager' function.",
-            "Uses a pre-built function called 'match' for querying team members.",
-            "It only returns workers who report directly to the logged-in user.",
-            "It provides a list of all employees in the entire organization."
+            "Get all opportunities",
+            "Create opportunity (create opportunity) with a parameter for opportunity number",
+            "Update opportunity (update opportunity) with a parameter for opportunity number",
+            "Get all opportunities (get_all_opportunities) with a filter on opportunity number"
         ],
-        "correctAnswer": 2,
-        "source": "Oracle HCM Cloud Documentation"
+        "correctAnswer": 3,
+        [cite_start]"source": "Oracle Visual Builder/Business Object API [cite: 535]"
     },
     {
         "id": 28,
-        "question": "Why would you integrate Oracle Fusion AI Agent with external services via REST API?",
+        "question": "Which operation is used in the Business Object tool in Oracle AI Agent Studio to retrieve team details?",
         "options": [
-            "To restrict integration to internal data only.",
-            "To extend agents with external platforms such as Slack or Microsoft Teams.",
-            "To replace the internal database.",
-            "To avoid using Business Objects."
+            "Uses the 'Get Manager' function to retrieve team details",
+            "Uses a pre-built function called 'match' for querying team members",
+            "It only returns workers who report directly to the logged in user",
+            "It provides a list of all employees in the entire organization"
         ],
-        "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Integrations"
+        "correctAnswer": 2,
+        [cite_start]"source": "Oracle HCM Cloud Documentation [cite: 541]"
     },
     {
         "id": 29,
-        "question": "The agent must retrieve inventory data from Fusion Inventory for authorized locations and allow for future integration with logistics partners. How?",
+        "question": "You are designing an agent in Oracle AI Agent Studio. The agent must retrieve inventory data from Fusion Inventory for locations they are authorized to access, and allow for future integration with logistics partners. How can this requirement be addressed?",
         "options": [
-            "Upload Inventory spreadsheets regularly using a Document Tool.",
-            "Assign a Deep Link Tool to the inventory dashboard.",
-            "Combine a Document Tool for inventory records with a Deep Link Tool.",
-            "Add a Business Object Tool for inventory with role-based access and configure an External REST call."
+            "Upload Inventory spreadsheets regularly using a Document Tool and assign Topics for each warehouse",
+            "Assign a Deep Link Tool to the inventory dashboard and use a Calculator Tool for stock estimates",
+            "Combine a Document Tool for inventory record storage with a Deep Link Tool to logistics partner portals",
+            "Add a Business Object Tool for inventory with role-based access and configure an External REST call"
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio - Tooling"
+        [cite_start]"source": "Oracle AI Agent Studio - Tooling [cite: 554]"
     },
     {
         "id": 30,
         "question": "Which operation types are supported when creating a business object in Oracle Fusion's Agent Studio?",
         "options": [
-            "POST, GET, PATCH, DELETE (CRUD).",
-            "JOIN, MERGE, SPLIT",
-            "SELECT, INSERT, UPDATE",
-            "CREATE, READ, UPDATE, DELETE (CRUD) only"
+            "POST, GET, PATCH, DELETE (CRUD)"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Business Object Operations"
+        [cite_start]"source": "Oracle AI Agent Studio - Business Object Operations [cite: 557]"
     },
     {
         "id": 31,
-        "question": "What should you include when defining an External REST API Tool to ensure the agent successfully communicates with the service?",
+        "question": "What should you include when defining an External REST API Tool in Oracle AI Agent Studio to ensure the agent successfully communicates with the service?",
         "options": [
-            "The API response schema, supported error codes, and any required mapping.",
-            "The endpoint URL, HTTP operation, and authentication details for the external API.",
-            "A set of predefined questions and answers.",
-            "A link to an external resource with information on the external API."
+            "The API response schema, supported error codes, and any required mapping to Fusion objects",
+            "The endpoint URL, HTTP operation, and authentication details for the external API",
+            "A set of predefined questions and answers related to the external service...",
+            "A link to an external resource with information on the external API and a list of supported tools"
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - REST Tool Definition"
+        [cite_start]"source": "Oracle AI Agent Studio - REST Tool Definition [cite: 564]"
     },
     {
         "id": 32,
-        "question": "A HR agent handling different HR processes follows the same escalation logic. How should the escalation logic be attached?",
+        "question": "A HR agent handling different HR processes follows the same escalation logic. How should the escalation logic and response style policies be attached to the Agent Team?",
         "options": [
-            "Create a shared Topic for escalation logic and a separate Topic for response style.",
-            "Upload escalation and response style documents to the Document Tool.",
-            "Assign a Business Object Tool to query escalation logic.",
-            "Hardcode it in every agent."
+            "Create a shared Topic for escalation logic and a separate Topic for response style",
+            "Upload escalation and response style documents to the Document Tool",
+            "Assign a Business Object Tool to query escalation logic and response style documents"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Topic Management"
+        [cite_start]"source": "Oracle AI Agent Studio - Topic Management [cite: 572]"
     },
     {
         "id": 33,
         "question": "When configuring and activating tasks in a Guided Journey, which statement describes the activation and preview steps?",
         "options": [
-            "Preview the journey and assign security roles for activation.",
-            "Preview is required, activation is optional.",
-            "Activation and preview are both required steps.",
-            "Only activation is required; preview is recommended."
+            "Preview the journey and assign security roles for activation",
+            "Preview is required, activation is optional",
+            "Activation and preview are both required steps",
+            "Only activation is required; preview is recommended"
         ],
         "correctAnswer": 3,
-        "source": "Oracle HCM Guided Journeys Guide"
+        [cite_start]"source": "Oracle HCM Guided Journeys Guide [cite: 583]"
     },
     {
         "id": 34,
-        "question": "You are deploying an AI agent within Oracle Fusion Applications using a Guided Journey. Which actions are required?",
+        "question": "You are deploying an AI agent within Oracle Fusion Applications using a Guided Journey. Which actions are required to deploy the agent?",
         "options": [
-            "Create a Guided Journey and add a Task type of 'agent'.",
-            "Update the agent's access in Security Console and map permissions.",
-            "Enter the Guided Journey code into the homepage page properties.",
-            "Both Create the Guided Journey Task AND Enter the Code in Page Properties."
+            "Create a Guided Journey and add a Task type of 'agent', referencing your workflow agent",
+            "Update the agent's access in Security Console and map permissions to user roles...",
+            "Enter the Guided Journey code into the homepage page properties via Visual Builder Studio",
+            "Assign the Guided Journey to a seeded Business Object tool..."
         ],
-        "correctAnswer": 3,
-        "source": "Oracle HCM Experience Design Studio"
+        "correctAnswer": 0,
+        [cite_start]"source": "Oracle HCM Experience Design Studio [cite: 587]"
     },
     {
         "id": 35,
-        "question": "After completing the Agent Team setup in AI Agent Studio, what steps are required to visualize the agent on the homepage?",
+        "question": "You are configuring an AI agent to answer HR questions and want it to appear on the employee homepage. After completing the Agent Team setup in AI Agent Studio, what steps are required to visualize the agent?",
         "options": [
-            "In Visual Builder Studio, enter the Guided Journey code in the dedicated field for homepage properties.",
-            "In AI Agent Studio, assign a Business Object Tool to the agent.",
-            "In the Application menu, duplicate the Agent Team.",
-            "In Guided Journeys, create a new journey."
+            "In Visual Builder Studio, enter the Guided Journey code in the dedicated field for homepage properties",
+            "In AI Agent Studio, assign a Business Object Tool to the agent and update agent security...",
+            "In the Application menu, duplicate the Agent Team and map it to the Guided Journey homepage...",
+            "In Guided Journeys, create a new journey and add a task referencing the agent..."
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Deployment"
+        [cite_start]"source": "Oracle AI Agent Studio - Deployment [cite: 594]"
     },
     {
         "id": 36,
-        "question": "An administrator needs to update an existing policy with a new version. What is the recommended process?",
+        "question": "An administrator needs to update an existing policy with a new version. What is the recommended process for uploading new policy documents and making them available to the Agent?",
         "options": [
-            "Delete existing tools from the Agent Team and create a new Document Tool.",
-            "Add the policy documents as file attachments in the workflow settings.",
-            "Link new policy documents in a Topic and attach to the Agent Team.",
-            "Upload new documents directly to the Document Tool and run the Process Agent Documents ESS process."
+            "Delete existing tools from the Agent Team and create a new Document Tool for each policy update",
+            "Add the policy documents as file attachments in the agent's workflow settings",
+            "Link new policy documents in a Topic and attach the topic to the Agent Team to grant access",
+            "Upload the new documents directly to the Document Tool and then run the Process Agent Documents ESS process"
         ],
         "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio - Knowledge Management"
+        [cite_start]"source": "Oracle AI Agent Studio - Knowledge Management [cite: 602]"
     },
     {
         "id": 37,
-        "question": "An implementation team needs to grant an administrator full configuration access for both HCM and SCM families. What is the setup?",
+        "question": "An Oracle Fusion implementation team needs to grant an administrator full configuration and management access in AI Agent Studio for both the HCM and SCM product families. What is the required setup to provide the user with full administrator access to AI Agent Studio for both HCM and SCM?",
         "options": [
-            "Enable permission groups, assign Supply Chain Admin for SCM, and create custom HCM admin role with permission groups.",
-            "Assign HCM and SCM Application Administrator roles without permission groups.",
-            "Assign only the Application Implementation Consultant role.",
-            "Assign only FAI GenAI Agent Runtime Duty."
+            "Enable permission groups, assign the Supply Chain Application Administrator role for SCM, and create a custom HCM admin role with permission groups...",
+            "Assign the HCM Application Administrator and SCM Application Administrator roles without enabling permission groups",
+            "Assign only the Application Implementation Consultant role to the user",
+            "Assign only Fai GenAI Agent Runtime Duty to the user"
         ],
         "correctAnswer": 0,
-        "source": "Oracle Identity Manager / Security Console"
+        [cite_start]"source": "Oracle Identity Manager / Security Console [cite: 609]"
     },
     {
         "id": 38,
-        "question": "A Finance AI Agent is experiencing inconsistent prompt performance. What approach should be used to structure the system prompt?",
+        "question": "A Finance AI Agent in Fusion Applications is experiencing inconsistent prompt performance due to uncertain instructions. What approach should be used to structure the system prompt to maximize clarity and accuracy?",
         "options": [
-            "List all prompt details in order of perceived user importance.",
-            "Integrate persona, instructions, inputs, and outcomes into a single narrative paragraph.",
-            "Break the prompt into clearly defined sections by type such as persona, instructions, inputs, and desired output.",
-            "Remove the persona section."
+            "List all prompt details in order of perceived user importance, combining instructions...",
+            "Integrate persona, instructions, inputs, and outcomes into a single narrative paragraph without demarcation",
+            "Break the prompt into clearly defined sections by type such as persona, instructions, inputs, and desired output"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Prompt Engineering"
+        [cite_start]"source": "Oracle AI Agent Studio - Prompt Engineering [cite: 619]"
     },
     {
         "id": 39,
         "question": "Which metric is analyzed in Oracle AI Studio Automated Testing to determine if agent responses match expectations?",
         "options": [
-            "Sentiment verification scores measured during live A/B testing.",
-            "Correctness of the generated response compared to expected answers.",
-            "Token efficiency relative to test set averages.",
-            "Latency of response generation from input to output."
+            "Verification scores measured during live A/B testing with real users",
+            "Correctness of the generated response compared to expected answers",
+            "Token efficiency relative to test set averages",
+            "Latency of response generation from input to output"
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Automated Testing"
+        [cite_start]"source": "Oracle AI Agent Studio - Automated Testing [cite: 623]"
     },
     {
         "id": 40,
-        "question": "Users report the embedded agent is not visible on the responsive homepage. What is a likely reason?",
+        "question": "You prepared and activated a Guided Journey linked to a newly developed agent, but users are reporting the agent is not visible on the responsive homepage. Which reasons explain why the embedded agent is not visible to users after deployment?",
         "options": [
-            "The Agent Team has not been published within AI Agent Studio.",
-            "The homepage layout was customized after the Guided Journey was embedded.",
-            "The Guided Journey is in the draft status.",
-            "The Guided Journey code was entered in a property field not associated with the homepage experience."
+            "The Agent Team has not been published within AI Agent Studio",
+            "The homepage layout was customized after the Guided Journey was embedded...",
+            "The Guided Journey is in the draft status",
+            "The Guided Journey code was entered in a property field not associated with the homepage experience"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Deployment Lifecycle"
+        [cite_start]"source": "Oracle AI Agent Studio - Deployment Lifecycle [cite: 630]"
     },
     {
         "id": 41,
         "question": "When testing a Guided Journey, why is Preview mode recommended?",
         "options": [
-            "Preview mode ensures homepage custom themes are not overwritten.",
-            "Preview mode validates that the Guided Journey agent appears and functions correctly in the UI context.",
-            "Preview mode automatically corrects misconfigured agent roles.",
-            "Preview mode is required to generate the Guided Journey's activation code."
+            "Preview mode ensures homepage custom themes are not overwritten during deployment",
+            "Preview mode validates that the Guided Journey agent appears and functions correctly in the UI context",
+            "Preview mode automatically corrects misconfigured agent roles before publishing",
+            "Preview mode is required to generate the Guided Journey's activation code"
         ],
         "correctAnswer": 1,
-        "source": "Oracle Visual Builder Studio"
+        [cite_start]"source": "Oracle Visual Builder Studio [cite: 638]"
     },
     {
         "id": 42,
         "question": "Which action should you perform in Visual Builder Studio to confirm that the Guided Journey agent appears correctly?",
         "options": [
-            "Add the Guided Journey agent code to homepage properties and use the preview function.",
-            "Enter the Guided Journey code in homepage properties and preview the page.",
-            "Edit the Visual Builder Studio template, update workflow triggers, and publish the home page.",
-            "Publish the page blindly and check in Production."
+            "Add the Guided Journey agent code to homepage properties and use the preview function to confirm appearance",
+            "Enter the Guided Journey code in homepage properties and preview the page",
+            "Edit the Visual Builder Studio template, update workflow triggers, and publish the home page"
         ],
         "correctAnswer": 1,
-        "source": "Oracle Visual Builder Studio"
+        [cite_start]"source": "Oracle Visual Builder Studio [cite: 649]"
     },
     {
         "id": 43,
         "question": "You are deploying a Guided Journey that includes an AI agent. During deployment, at what stage do you embed the code?",
         "options": [
-            "When creating a new business object in Visual Builder Studio.",
-            "When modifying the integration menu options.",
-            "When updating the Page Properties section in Visual Builder Studio to include the Guided Journey code.",
-            "When assigning the agent to the user role."
+            "When creating a new business object in Visual Builder Studio...",
+            "When modifying the integration menu options...",
+            "When updating the Page Properties section in Visual Builder Studio to include the Guided Journey code"
         ],
         "correctAnswer": 2,
-        "source": "Oracle HCM Experience Design Studio"
+        [cite_start]"source": "Oracle HCM Experience Design Studio [cite: 656]"
     },
     {
         "id": 44,
         "question": "A developer uses a Business Object to query and update benefits for an employee. How can you query details from a single enrollment?",
         "options": [
-            "Add a new parameter to the 'Parameters and Business Object Fields'.",
-            "Use the 'Add From Specification' option to create a Business Object function for single enrollment.",
-            "Add the ID manually.",
-            "It is not possible to query single enrollments."
+            "Add a new parameter to the Parameters and Business Object fields",
+            "Use the Add From Specification option to create a Business Object function for single enrollment"
         ],
         "correctAnswer": 1,
-        "source": "Oracle Visual Builder/Business Object API"
-    },
-    {
-        "id": 45,
-        "question": "Which information contributes to the effectiveness of Agent Training in Oracle AI Studio?",
-        "options": [
-            "Monitoring evaluation scores, performance metrics, and user satisfaction scores.",
-            "By actually correlating offline testing correctness metrics with online A/B testing outcomes to generate data-driven decisions.",
-            "By providing usernames, start times, agent memory, prompts, and topics associated with each trace.",
-            "By reviewing the server logs only."
-        ],
-        "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Training Effectiveness"
+        [cite_start]"source": "Oracle Visual Builder/Business Object API [cite: 660]"
     },
     {
         "id": 46,
-        "question": "A developer needs to allow users to navigate to the Invoices work area directly from an agent conversation. Which configuration enables this?",
+        "question": "A developer needs to allow users to navigate to the Invoices work area directly from an agent conversation. Which configuration enables this navigation from the agent?",
         "options": [
-            "Add a Document Tool containing the invoices policy and page link.",
-            "Configure an External REST Tool for the instance.",
-            "Create a deep link with the instance-relative URL, associate it with a Deep Link Tool, and assign to the Agent.",
-            "Use a Business Object Tool."
+            "Add a Document Tool containing the invoices policy and page link...",
+            "Configure an External REST Tool for the instance...",
+            "Create a deep link with the instance-relative URL, associate it with a Deep Link Tool, and assign the tool to the Agent"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Deep Link Tool"
+        [cite_start]"source": "Oracle AI Agent Studio - Deep Link Tool [cite: 676]"
     },
     {
         "id": 47,
-        "question": "A customer is integrating Oracle AI Agent Studio with a third-party HR system. The solution must support bi-directional data flow. Which tool combination?",
+        "question": "A customer is integrating Oracle AI Agent Studio with a third-party HR system. The solution must support bi-directional data flow. Which tool combination should they configure?",
         "options": [
-            "External REST Tool and Business Object Tool.",
-            "External REST Tool and Deep Link Tool.",
-            "Deep Link Tool and User Session Tool.",
-            "Document Tool and Deep Link Tool."
+            "External REST Tool and Business Object Tool",
+            "External REST Tool and Deep Link Tool",
+            "Deep Link Tool and User Session Tool",
+            "Document Tool and Deep Link Tool"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Integration Patterns"
+        [cite_start]"source": "Oracle AI Agent Studio - Integration Patterns [cite: 680]"
+    },
+    {
+        "id": 48,
+        "question": "Which information contributes to the effectiveness of Agent Training in Oracle AI Studio?",
+        "options": [
+            "Monitoring evaluation scores, performance metrics, and user satisfaction scores...",
+            "By actually correlating offline testing correctness metrics with online A/B testing outcomes to generate comprehensive data-driven decision-making",
+            "By providing usernames, start times, agent memory, prompts, topics, and instructions associated with each trace..."
+        ],
+        "correctAnswer": 1,
+        [cite_start]"source": "Oracle AI Agent Studio - Training Effectiveness [cite: 689]"
     },
     {
         "id": 50,
-        "question": "A Benefits Enrollment Agent prompts for dependent details but forgets them when selecting the health plan in the next step. How should you refine the setup?",
+        "question": "A Benefits Enrollment Agent is designed to help employees enroll in benefits by collecting dependent details. You notice that although the agent prompts the employee to enter dependent details in one step, it forgets this context when selecting the health plan in the next step. How should you refine the setup to ensure context is retained across steps?",
         "options": [
-            "Set up separate workflows for dependents and health plans.",
-            "Adjust the prompt so that the model references earlier text.",
-            "Configure session variables to hold dependent details so they remain available when the health plan phase begins.",
-            "Ask the user to re-enter the data every time."
+            "Set up separate workflows for dependents and health plans, each handling its own step",
+            "Adjust the prompt so that the model references earlier text in the conversation...",
+            "Configure session variables to hold dependent details so that they remain available when the health plan phase begins"
         ],
         "correctAnswer": 2,
-        "source": "Oracle AI Agent Studio - Session Management"
+        [cite_start]"source": "Oracle AI Agent Studio - Session Management [cite: 701]"
     },
     {
         "id": 52,
         "question": "What is the core difference between Agent Tracing and Prompt Tracing?",
         "options": [
-            "Agent Tracing provides full visibility into usage and performance; Prompt Tracing analyzes each prompt individually.",
-            "Agent Tracing provides step-by-step visualization of multi-step executions; Prompt Tracing focuses on specific generation.",
-            "Agent Tracing is tied to compliance; Prompt Tracing is for debugging.",
-            "There is no difference."
+            "Agent Tracing provides full visibility into usage and performance... while Prompt Tracing analyzes each prompt individually",
+            "Agent Tracing provides step-by-step visualization of multi-step agent executions, while Prompt Tracing focuses on the specific generation",
+            "Agent Tracing is tied to compliance evaluation workflows..."
         ],
         "correctAnswer": 1,
-        "source": "Oracle AI Agent Studio - Observability"
+        [cite_start]"source": "Oracle AI Agent Studio - Observability [cite: 694]"
     }
 ];
 
