@@ -14,15 +14,14 @@ export const initialQuestions = [
     },
     {
         "id": 2,
-        "question": "As an implementer of AI agents, you are responsible for evaluating their performance with latency and token metrics. Why is it important to consider these alongside correctness?",
+        "question": "As an implementer of AI agents, you are responsible for evaluating their performance. In addition to verifying the accuracy of responses, you are also provided with latency and token metrics for each interaction.\n\nWhy is it important to consider latency and token metrics alongside correctness when assessing the overall performance of an AI agent?",
         "options": [
-            "While latency and tokens reveal efficiency, correctness only validates semantic memory.",
-            "While latency and tokens control 'Complete' status, correctness validates factual alignment.",
-            "Correctness checks only logical consistency.",
-            "While latency and tokens reveal efficiency/cost, correctness validates the factual accuracy of the answer."
+            "While latency and tokens reveal the efficiency and cost-performance of the agent, correctness evaluates only semantic alignment.",
+            "While latency and tokens directly control whether a response is marked \"Complete\" or not, correctness validates the factual match with expected outputs.",
+            "While latency and tokens help ensure the actual outputs generated adhere to the formatting and structural requirements of the expected responses, correctness checks only logical consistency."
         ],
-        "correctAnswer": 3,
-        "source": "Oracle AI Agent Studio - Monitor and Evaluate AI Agents",
+        "correctAnswer": 2,
+        "source": "User Uploaded Image",
         "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/monitor-and-evaluate-ai-agents.html"
     },
     {
@@ -30,7 +29,7 @@ export const initialQuestions = [
         "question": "In Oracle AI Agent Studio, what is the significance of offline testing compared to online A/B testing?",
         "options": [
             "Offline testing requires manual verification, while A/B testing uses automated metrics.",
-            "Offline testing ensures evaluation against reference answers before launch, while A/B testing checks live sentiment.",
+            "Offline testing ensures answers match reference/test-set data before launch, while A/B testing measures live performance with end users.",
             "Offline testing validates latency before production, while A/B testing validates semantic correctness.",
             "Offline testing focuses on optimizing agent performance, while A/B testing validates configuration effectiveness."
         ],
@@ -49,7 +48,7 @@ export const initialQuestions = [
         ],
         "correctAnswer": 3,
         "source": "Oracle Fusion Security Reference & AI Agent Studio Guide",
-        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/access-requirements-for-ai-agent-studio.html"
     },
     {
         "id": 5,
@@ -75,7 +74,7 @@ export const initialQuestions = [
         ],
         "correctAnswer": 0,
         "source": "Oracle AI Agent Studio - Managing Topics",
-        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html"
+        "link": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/components-of-ai-agent-studio.html#topics"
     },
     {
         "id": 7,
@@ -87,7 +86,7 @@ export const initialQuestions = [
             "HCM Access Control List Initial Ingestion"
         ],
         "correctAnswer": 0,
-        "source": "Oracle AI Agent Studio - Create Guided Journeys",
+        "source": "Oracle AI Agent Studio - Document Tools",
         "link": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25a/faiom/create-guided-journeys-for-faqs-in-order-management.html"
     },
     {
