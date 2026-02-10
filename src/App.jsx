@@ -170,8 +170,8 @@ function App() {
             <div
               onClick={() => setInstantFeedback(true)}
               className={`p-6 rounded-lg border-2 cursor-pointer transition-smooth ${instantFeedback
-                  ? 'border-oracle-red bg-red-50'
-                  : 'border-gray-200 hover:border-gray-300'
+                ? 'border-oracle-red bg-red-50'
+                : 'border-gray-200 hover:border-gray-300'
                 }`}
             >
               <div className="flex items-start">
@@ -195,8 +195,8 @@ function App() {
             <div
               onClick={() => setInstantFeedback(false)}
               className={`p-6 rounded-lg border-2 cursor-pointer transition-smooth ${!instantFeedback
-                  ? 'border-oracle-red bg-red-50'
-                  : 'border-gray-200 hover:border-gray-300'
+                ? 'border-oracle-red bg-red-50'
+                : 'border-gray-200 hover:border-gray-300'
                 }`}
             >
               <div className="flex items-start">
@@ -273,8 +273,8 @@ function App() {
                     <div
                       key={optIndex}
                       className={`p-4 rounded-lg border-2 ${isCorrect
-                          ? 'border-green-500 bg-green-50'
-                          : 'border-gray-200 bg-gray-50'
+                        ? 'border-green-500 bg-green-50'
+                        : 'border-gray-200 bg-gray-50'
                         }`}
                     >
                       <div className="flex items-center justify-between">
@@ -290,6 +290,16 @@ function App() {
                 <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
                   <p className="text-sm font-semibold text-blue-900 mb-1">Source:</p>
                   <p className="text-sm text-blue-800">{question.source}</p>
+                  {question.link && (
+                    <a
+                      href={question.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-600 hover:text-blue-800 underline mt-1 inline-block"
+                    >
+                      View Documentation →
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -393,6 +403,16 @@ function App() {
               <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded animate-slideUp">
                 <p className="text-sm font-semibold text-blue-900 mb-1">Source:</p>
                 <p className="text-sm text-blue-800">{currentQuestion.source}</p>
+                {currentQuestion.link && (
+                  <a
+                    href={currentQuestion.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-600 hover:text-blue-800 underline mt-1 inline-block"
+                  >
+                    View Documentation →
+                  </a>
+                )}
               </div>
             )}
           </div>
@@ -486,6 +506,16 @@ function App() {
                       <div className="p-3 rounded bg-blue-50 border border-blue-200">
                         <p className="text-sm font-semibold mb-1">Source:</p>
                         <p className="text-sm">{question.source}</p>
+                        {question.link && (
+                          <a
+                            href={question.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-blue-600 hover:text-blue-800 underline mt-1 inline-block"
+                          >
+                            View Documentation →
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
